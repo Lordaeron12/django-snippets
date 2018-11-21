@@ -4,8 +4,10 @@ from django.db import IntegrityError #Exception for db issues with constraints a
 from django.shortcuts import redirect 
 from django.views.generic import TemplateView
 from users.models import User #App's auth user model
+
 class SignupView(TemplateView):
     template_name = "users/signup.html"
+    
     def post(self, request, *args, **kwargs):
         redirect_url = 'signup'
         try:
